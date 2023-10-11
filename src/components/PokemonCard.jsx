@@ -1,7 +1,6 @@
 import "./pokemonCard.css"
 import PropTypes from "prop-types";
 
-
 function PokemonCard({ pokemon }) {
     return (
         <figure className="card">
