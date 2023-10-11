@@ -1,18 +1,26 @@
 import "./pokemonCard.css"
+import PropTypes from "prop-types";
 
 
-function PokemonCard(props) {
+function PokemonCard({ pokemon }) {
 
-    console.log(props.pokemon);
+    PokemonCard.propTypes = {
+        pokemon: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            imgSrc: PropTypes.string,
+        }).isRequired,
+    }
+
+    console.log();
     return (
         <figure className="card">
-            {props.pokemon.imgSrc ? <img
+            {pokemon.imgSrc ? <img
                 className="card-img"
-                src={props.pokemon.imgSrc}
-                alt={props.pokemon.name}
-                title={props.pokemon.names}
+                src={pokemon.imgSrc}
+                alt={pokemon.name}
+                title={pokemon.names}
             /> : <p>???</p>}
-            <figcaption>{props.pokemon.name}</figcaption>
+            <figcaption>{pokemon.name}</figcaption>
 
         </figure>
     )
