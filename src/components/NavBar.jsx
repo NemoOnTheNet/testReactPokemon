@@ -1,8 +1,24 @@
-function NavBar({ HandleClickPrecedent, HandleClicksuivant, pokemonList, pokemonIndex }) {
+function NavBar({ setPokemonIndex, pokemonList }) {
+
+
     return (
+
+
+
         <>
-            {pokemonIndex > 0 ? <button onClick={HandleClickPrecedent} >Précedent</button> : ''}
-            {pokemonIndex < (pokemonList.length - 1) ? < button onClick={HandleClicksuivant} >Suivant</button > : ''}
+            {pokemonList.map((pokemon, index) =>
+                <button onClick={() => {
+                    setPokemonIndex(index);
+                }}
+                    key={pokemon.name}>
+                    {pokemon.name}
+                </button>
+            )}
+
+
+
+
+
         </>
     )
 }
